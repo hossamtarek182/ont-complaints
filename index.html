@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>تقديم شكوى – ONT Garments</title>
+<style>
+body{font-family:Arial;background:#f4f6f8;padding:20px}
+.container{max-width:420px;background:#fff;padding:20px;border-radius:10px;margin:auto}
+h2{text-align:center}
+input,select,textarea,button{
+  width:100%;margin:8px 0;padding:10px;font-size:14px
+}
+button{background:#25D366;color:#fff;border:none;border-radius:5px}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h2>تقديم شكوى – ONT Garments</h2>
+
+<input id="name" placeholder="الاسم (اختياري)">
+<select id="dept">
+  <option value="">القسم</option>
+  <option>إنتاج</option>
+  <option>مخازن</option>
+  <option>إدارة</option>
+  <option>أمن</option>
+</select>
+
+<input id="type" placeholder="نوع الشكوى">
+<textarea id="details" placeholder="تفاصيل الشكوى"></textarea>
+
+<button onclick="send()">إرسال الشكوى</button>
+</div>
+
+<script>
+function send(){
+let msg =
+`شكوى – ONT Garments
+
+الاسم: ${name.value}
+القسم: ${dept.value}
+نوع الشكوى: ${type.value}
+التفاصيل:
+${details.value}`;
+
+window.location =
+"https://wa.me/201010358967?text=" + encodeURIComponent(msg);
+}
+</script>
+</body>
+</html>
